@@ -22,10 +22,6 @@ By default, the app is set up for LocalDB on Windows:
 
 If you are NOT on Windows or do not have LocalDB:
 - Replace the connection string in TaskManager.WebApi/appsettings.Development.json with one that points to a reachable SQL Server.
-Example:
-"ConnectionStrings": {
-  "DefaultConnection": "Server=localhost,1433;Database=TaskManager;User Id=sa;Password=Your_password123;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;"
-}
 
 ## Apply Entity Framework Core migrations
 Install EF tools if you do not have them:
