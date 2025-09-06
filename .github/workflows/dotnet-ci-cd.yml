@@ -28,27 +28,27 @@ jobs:
       - name: Run tests
         run: dotnet test --no-build --configuration Release --logger trx
 
-  deploy:
-    name: Deploy to Azure App Service
-    runs-on: ubuntu-latest
-    needs: build-test
-    if: github.ref == 'refs/heads/master'
+  # deploy:
+  #   name: Deploy to Azure App Service
+  #   runs-on: ubuntu-latest
+  #   needs: build-test
+  #   if: github.ref == 'refs/heads/master'
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v4
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.0.x'
+  #     - name: Setup .NET
+  #       uses: actions/setup-dotnet@v4
+  #       with:
+  #         dotnet-version: '8.0.x'
 
-      - name: Publish project
-        run: dotnet publish --configuration Release -o ./publish
+  #     - name: Publish project
+  #       run: dotnet publish --configuration Release -o ./publish
 
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: TaskManager123
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISH_PROFILE }}
-          package: ./publish
+  #     - name: Deploy to Azure Web App
+  #       uses: azure/webapps-deploy@v3
+  #       with:
+  #         app-name: TaskManager123
+  #         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISH_PROFILE }}
+  #         package: ./publish
