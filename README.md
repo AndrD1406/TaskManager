@@ -1,6 +1,6 @@
 # TaskManager API (Local Run Guide)
 
-This guide explains how to run the application locally without Docker.
+This guide explains how to run the application locally.
 
 Solution projects:
 - TaskManager.DataAccess
