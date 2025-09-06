@@ -18,7 +18,7 @@ public class UsersController : ControllerBase
         this.logger = logger;
     }
 
-    [HttpPost("register")]
+    [HttpPost]
     [AllowAnonymous]
     public async Task<ActionResult<AuthenticationResponse>> Register([FromBody] RegisterRequest request)
     {
@@ -30,7 +30,7 @@ public class UsersController : ControllerBase
         return Ok(result);
     }
 
-    [HttpPost("login")]
+    [HttpPost]
     [AllowAnonymous]
     public async Task<ActionResult<AuthenticationResponse>> Login([FromBody] LoginRequest request)
     {
